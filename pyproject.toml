@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "modern-python"
+version = "0.1.0"
+description = "A repo to test out modern python features and setups."
+authors = ["Vishal Adusumilli <vishal.adu@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/vishaladu/modern-python"
+repository = "https://github.com/vishaladu/modern-python"
+keywords = ["python"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^7.1.2"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+modern-python = "modern_python.console:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
