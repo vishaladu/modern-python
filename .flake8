@@ -1,9 +1,9 @@
 # .flake8
 [flake8]
 select = B, B9, BLK, C, E, F, I, S, W
-ignore = E203, W501, W503 
+ignore = E203, W501, W503
 max-line-length = 88
 max-complexity = 10
 application-import-names = modern_python,tests
 import-order-style = google
-per-file-ignores = tests/*S101
+per-file-ignores = tests/*:S101

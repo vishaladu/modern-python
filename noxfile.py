@@ -1,6 +1,7 @@
 # noxfile.py
-import nox
 import tempfile
+
+import nox
 
 nox.options.sessions = "lint", "safety", "tests"
 locations = "src", "tests", "noxfile.py"
@@ -24,11 +25,10 @@ def lint(session):
     args = session.posargs or locations
     install_with_constraints(
         session,
-        "flake8",                   #linter
-        "flake8-bandit"             #security checker
-        "flake8-black",             #opinionated formatter
-        "flake8-bugbear",           #finds common bugs/design erros
-        "flake8-import-order"       #enforces import order (PEP-8)
+        "flake8",  # linter
+        "flake8-bandit" "flake8-black",  # security checker  # opinionated formatter
+        "flake8-bugbear",  # finds common bugs/design erros
+        "flake8-import-order",  # enforces import order (PEP-8)
     )
     session.run("flake8", *args)
 
@@ -52,10 +52,10 @@ def black(session):
 
 @nox.session(python="3.8")
 def safety(session):
-    ''' 
+    """
     Exports poetry's lock file to requirements file. This file is then used by safety
     to check for security vulnerablities in the python packages used.
-    '''
+    """
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
             "poetry",
@@ -68,18 +68,3 @@ def safety(session):
         )
         install_with_constraints(session, "safety")
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
