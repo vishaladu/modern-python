@@ -1,8 +1,8 @@
 # tests/test_console.py
-import requests
-
 import click.testing
 import pytest
+import requests
+
 
 from modern_python import console
 
