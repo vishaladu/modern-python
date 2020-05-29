@@ -17,6 +17,7 @@ requests = "^2.23.0"
 pytest = "^5.4.2"
 pytest-cov = "^2.9.0"
 coverage = {extras = ["toml"], version = "^5.1"}
+pytest-mock = "^3.1.0"
 
 [tool.poetry.scripts]
 modern-python = "modern_python.console:main"
